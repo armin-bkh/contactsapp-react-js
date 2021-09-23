@@ -1,0 +1,50 @@
+$gray-800: #1F2937;
+$gray-500: #6B7280;
+$gray-400: #9CA3AF;
+$gray-300: #D1D5DB;
+$red-900: #7F1D1D;
+$yellow-400: #FBBF24;
+
+.text-gray-500{
+    color: $gray-500;
+}
+
+.bg-gray-800{
+    color: $gray-800;
+}
+
+.border-gray-300{
+  border-bottom: 1px solid $gray-300;
+}
+
+.text-gray-400{
+    color: $gray-400;
+}
+
+.text-gray-300{
+    color: $gray-300;
+}
+
+.text-yellow-400{
+    color: $yellow-400;
+}
+
+.border-yellow-400{
+    border: 1px solid $yellow-400;
+}
+
+.bg-yellow-400{
+    background-color: $yellow-400;
+}
+
+.text-red-900{
+    color: $red-900;
+}
+
+.border-red-900{
+    border: 1px solid $red-900;
+}
+
+.bg-red-900{
+    background-color: $red-900;
+}
