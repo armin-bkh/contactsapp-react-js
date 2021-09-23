@@ -1,143 +1,157 @@
-.contact{
+.contact {
     width: 40rem;
     height: 100vh;
+
     @media screen and (max-width: 900px) {
         width: 100%;
     }
 }
 
-.h-screen{
+.h-screen {
     height: 90vh;
 }
 
-.rounded-md{
+.rounded-md {
     border-radius: 5px;
 }
 
-.inline{
+.inline {
     display: inline;
 }
 
-.flex{
+.flex {
     display: flex;
 }
 
-.blocks{
+.blocks {
     @media screen and (max-width: 700px) {
         display: block;
     }
 }
-.mt-2{
+
+.mt-2 {
     @media screen and (max-width: 700px) {
         margin-top: .4rem;
     }
 }
-.flex-col{
+
+.flex-col {
     flex-direction: column;
 }
 
-.justify-center{
+.justify-center {
     justify-content: center;
 }
 
-.justify-between{
+.justify-between {
     justify-content: space-between;
 }
 
-.items-center{
+.items-center {
     align-items: center;
 }
 
-.p-1{
+.p-1 {
     padding: .6rem;
 }
 
-.px-3{
+.px-3 {
     padding-left: 1.5rem;
     padding-right: 1.5rem;
 }
 
-.py-1{
+.py-1 {
     padding-top: .5rem;
     padding-bottom: .5rem;
 }
 
-.p-5{
+.p-5 {
     padding: 3rem;
 }
 
-.mt-auto{
+.mt-auto {
     margin-top: auto;
 }
 
-.mb-3{
+.mb-3 {
     margin-bottom: 1.5rem;
 }
 
-.mx-auto{
+.mx-auto {
     margin-left: auto;
     margin-right: auto;
 }
 
-.profile-logo{
+.profile-logo {
     font-size: 20rem;
 
     @media screen and (max-width: 900px) {
-    font-size: 16rem;
+        font-size: 16rem;
     }
 }
 
-.mb-2{
+.profile-size {
+    width: 350px;
+    height: 350px;
+
+    @media screen and (max-width: 900px) {
+
+        width: 220px;
+        height: 220px;
+    }
+}
+
+.mb-2 {
     margin-bottom: .7rem;
 }
 
-.mr-3{
+.mr-3 {
     margin-right: .7rem;
 }
 
-.rounded-full{
+.rounded-full {
     border-radius: 50%;
 }
 
-.outline-none{
+.outline-none {
     outline: none;
 }
 
-.bg-transparent{
+.bg-transparent {
     background: transparent;
 }
 
-.border-none{
+.border-none {
     border: none;
 }
 
-.inp{
+.inp {
     color: $gray-300;
 }
 
-.inp::placeholder{
- color: $gray-500;
+.inp::placeholder {
+    color: $gray-500;
 }
 
-.transition{
+.transition {
     transition: all .4s ease;
 }
 
-.w-full{
+.w-full {
     width: 100%;
 }
 
-.relative{
+.relative {
     position: relative;
 }
 
-.fixed{
+.fixed {
     position: fixed;
     bottom: 20px;
     right: 20px;
 }
 
-.absolute{
+.absolute {
     position: absolute;
     bottom: 9px;
     right: 7px;

@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import ContactInput from "../Common/ContactInput/ContactInput";
+import EditContactSkeleton from "../Skeletons/EditContactSkeleton/EditContactSkeleton";
 
 const EditContact = ({ location, match, history, onEdit }) => {
   const [contact, setContact] = useState(null);
@@ -77,7 +78,7 @@ const EditContact = ({ location, match, history, onEdit }) => {
             </button>
           </form>
         ) : (
-          <h1>loading...</h1>
+          <EditContactSkeleton />
         )}
       </main>
     </>

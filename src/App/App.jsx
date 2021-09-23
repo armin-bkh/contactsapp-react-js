@@ -15,8 +15,8 @@ const App = ({ history }) => {
       history.push("/add-contact");
       return;
     }
-    setAllContacts(savedContacts);
-    setContacts(savedContacts);
+      setAllContacts(savedContacts);
+      setContacts(savedContacts);
   }, []);
 
   useEffect(() => {

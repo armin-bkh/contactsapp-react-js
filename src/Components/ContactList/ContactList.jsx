@@ -3,6 +3,7 @@ import ContactItem from "./ContactItem/ContactItem";
 import { FiSearch } from 'react-icons/fi';
 import { AiOutlinePlus } from 'react-icons/ai';
 import { useState } from "react";
+import ConatctItemSkeleton from "../Skeletons/ContactItemSkeleton/ContactItemSkeleton";
 
 const ContactList = ({ contacts, onSearch }) => {
     const [search, setSearch] = useState('');
@@ -24,9 +25,10 @@ const ContactList = ({ contacts, onSearch }) => {
         <main>
             <section className={`px-3`}>
                 <ul>
-                    { contacts ? 
+                    { 
+                    contacts ? 
                         contacts.map((ct) => <ContactItem key={ct.id} contact={ct} />) : 
-                        <h1>Loading...</h1>
+                        Array(30).fill().map((it, index) => <ConatctItemSkeleton key={index} />)
                     }
                 </ul>
             </section>
