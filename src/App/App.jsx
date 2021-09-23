@@ -6,12 +6,12 @@ import Contact from "../Components/Contact/Contact";
 import EditContact from "../Components/EditContact/EditContact";
 
 const App = ({ history }) => {
-  const [allContacts, setAllContacts] = useState([]);
+  const [allContacts, setAllContacts] = useState(null);
   const [contacts, setContacts] = useState(null);
 
   useEffect(() => {
     const savedContacts = JSON.parse(localStorage.getItem("contacts"));
-    if (!savedContacts.length || !savedContacts) {
+    if (!savedContacts) {
       history.push("/add-contact");
       return;
     }
