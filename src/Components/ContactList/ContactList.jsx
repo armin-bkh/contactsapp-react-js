@@ -1,4 +1,6 @@
+import { Link } from "react-router-dom";
 import ContactItem from "./ContactItem/ContactItem";
+import { AiOutlinePlus } from 'react-icons/ai';
 
 const ContactList = ({ contacts }) => {
     return ( 
@@ -7,7 +9,7 @@ const ContactList = ({ contacts }) => {
             <h1 className={`text-yellow-400 font-header`}>Contacts</h1>
         </header>
         <main>
-            <section>
+            <section className={`px-3`}>
                 <ul>
                     { contacts ? 
                         contacts.map((ct) => <ContactItem key={ct.id} contact={ct} />) : 
@@ -15,6 +17,8 @@ const ContactList = ({ contacts }) => {
                     }
                 </ul>
             </section>
+
+            <Link className={`fixed bg-yellow-400 text-gray-800 inline p-1 rounded-full flex items-center justify-center font-name`} to="/add-contact"><AiOutlinePlus /></Link>
         </main>
         </>
      );

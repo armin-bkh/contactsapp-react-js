@@ -1,5 +1,9 @@
 .rounded-md{
-    border-radius: 10px;
+    border-radius: 5px;
+}
+
+.inline{
+    display: inline;
 }
 
 .flex{
@@ -20,6 +24,10 @@
 
 .items-center{
     align-items: center;
+}
+
+.p-1{
+    padding: .6rem;
 }
 
 .px-3{
@@ -50,4 +58,46 @@
 
 .mr-3{
     margin-right: 1.5rem;
+}
+
+.rounded-full{
+    border-radius: 50%;
+}
+
+.outline-none{
+    outline: none;
+}
+
+.bg-transparent{
+    background: transparent;
+}
+
+.border-none{
+    border: none;
+}
+
+.inp{
+    color: $gray-300;
+}
+
+.inp::placeholder{
+ color: $gray-500;
+}
+
+.transition{
+    transition: all .4s ease;
+}
+
+.w-full{
+    width: 100%;
+}
+
+.relative{
+    position: relative;
+}
+
+.fixed{
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
 }
