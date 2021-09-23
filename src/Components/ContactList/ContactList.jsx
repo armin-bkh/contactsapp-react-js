@@ -1,3 +1,5 @@
+import ContactItem from "./ContactItem/ContactItem";
+
 const ContactList = ({ contacts }) => {
     return ( 
         <>
@@ -8,7 +10,7 @@ const ContactList = ({ contacts }) => {
             <section>
                 <ul>
                     { contacts ? 
-                        contacts.map((ct) => ) : 
+                        contacts.map((ct) => <ContactItem key={ct.id} contact={ct} />) : 
                         <h1>Loading...</h1>
                     }
                 </ul>
