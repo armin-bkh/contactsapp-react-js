@@ -34,7 +34,7 @@ const AddContact = ({ history, onAdd }) => {
         <h1 className={`font-header text-yellow-400 px-3 py-1`}>Add Contact</h1>
       </header>
       <main>
-        <form className={`p-5`} onSubmit={submitHandler}>
+        <form className={`px-3 flex flex-col h-screen`} onSubmit={submitHandler}>
           <ContactInput
             type="text"
             name="name"
