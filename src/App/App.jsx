@@ -3,6 +3,7 @@ import ContactList from '../Components/ContactList/ContactList';
 import { useState, useEffect } from 'react';
 import AddContact from '../Components/AddContact/AddContact';
 import Contact from '../Components/Contact/Contact';
+import EditContact from '../Components/EditContact/EditContact';
 
 const App = ({ history }) => {
   const [allContacts, setAllContacts] = useState([]);
@@ -40,11 +41,21 @@ const App = ({ history }) => {
     history.push("/")
   }
 
+  const editContactHandler = (id, contact) =>{
+    const index = allContacts.findIndex(ct => ct.id === id);
+    let cloneContacts = [...allContacts];
+    let selectedContact = {...cloneContacts[index]};
+    selectedContact = contact;
+    cloneContacts[index] = selectedContact;
+    setAllContacts(cloneContacts);
+  }
+
   return (
     <div className="App">
       {
         <Switch>
           <Route path="/contact-:id" render={ props => <Contact onDelete={deleteContactHandler} {...props} />} />
+          <Route path="/edit-:id" render={ props => <EditContact onEdit={editContactHandler} {...props} />} />
           <Route path="/add-contact" render={ props => <AddContact onAdd={addContactHandler} {...props} />} />
           <Route path="/" exact render={ props => <ContactList contacts={contacts} {...props} />} />
         </Switch>

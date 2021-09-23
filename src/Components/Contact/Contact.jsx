@@ -32,7 +32,7 @@ const Contact = ({ location, history, onDelete }) => {
             </div>
             <Link
               className={`text-yellow-400 py-1 px-3 rounded-md border-yellow-400 font-name`}
-              to={{ pathname: `/edit-${contact.id}`, state: contact }}
+              to={{ pathname: `/edit-${contact.id}`, state: { contact } }}
             >
               <BiPencil />
             </Link>
