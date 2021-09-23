@@ -6,7 +6,7 @@ import Contact from "../Components/Contact/Contact";
 import EditContact from "../Components/EditContact/EditContact";
 
 const App = ({ history }) => {
-  const [allContacts, setAllContacts] = useState(null);
+  const [allContacts, setAllContacts] = useState([]);
   const [contacts, setContacts] = useState(null);
 
   useEffect(() => {
@@ -15,19 +15,25 @@ const App = ({ history }) => {
       history.push("/add-contact");
       return;
     }
-      setAllContacts(savedContacts);
-      setContacts(savedContacts);
+    setAllContacts(savedContacts);
+    setContacts(savedContacts);
   }, []);
 
   useEffect(() => {
     localStorage.setItem("contacts", JSON.stringify(allContacts));
     setContacts(allContacts);
+    if(allContacts){
+      if(!allContacts.length){
+        history.push("add-contact")
+      }
+    }
   }, [allContacts]);
 
   const addContactHandler = (contact) => {
-    if(allContacts){
-      setAllContacts([...allContacts, { ...contact, id: new Date().getTime() }]);
-    } else setAllContacts([{ ...contact, id: new Date().getTime() }]);
+      setAllContacts([
+        ...allContacts,
+        { ...contact, id: new Date().getTime() },
+      ]);
   };
 
   const deleteContactHandler = (id) => {
