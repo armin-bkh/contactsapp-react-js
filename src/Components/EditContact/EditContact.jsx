@@ -71,7 +71,7 @@ const EditContact = ({ location, match, history, onEdit }) => {
             )}
             <button
               type="submit"
-              className={`w-full py-1 mt-auto bg-yellow-400 text-gray-800`}
+              className={`w-full py-1 mt-auto bg-yellow-400 text-gray-800 rounded-md border-none outline-none`}
             >
               Submit
             </button>

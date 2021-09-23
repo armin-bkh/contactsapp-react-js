@@ -24,14 +24,13 @@ const Contact = ({ location, match, history, onDelete }) => {
   }, []);
 
   return contact ? (
-    <article className={`flex flex-col p-5 contact mx-auto h-screen`}>
+    <article className={`flex flex-col px-3 py-1 contact mx-auto`}>
       <Link to="/" className={`text-yellow-400 font-header relative inline`}>
         <IoReturnUpBack />
       </Link>
       <div className={`mx-auto`}>
         <FaUserCircle
-          className={`text-gray-300`}
-          style={{ fontSize: "20rem" }}
+          className={`text-gray-300 profile-logo`}
         />
       </div>
       <div className={`flex justify-between items-center`}>
