@@ -9,18 +9,18 @@ const App = ({ history }) => {
   const [allContacts, setAllContacts] = useState(null);
   const [contacts, setContacts] = useState(null);
 
-  useEffect(() => {
-    const savedContacts = JSON.parse(localStorage.getItem("contacts"));
-    if (!savedContacts) {
-      history.push("/add-contact");
-      return;
-    }
-      setAllContacts(savedContacts);
-      setContacts(savedContacts);
-  }, []);
+  // useEffect(() => {
+  //   const savedContacts = JSON.parse(localStorage.getItem("contacts"));
+  //   if (!savedContacts) {
+  //     history.push("/add-contact");
+  //     return;
+  //   }
+  //     setAllContacts(savedContacts);
+  //     setContacts(savedContacts);
+  // }, []);
 
   useEffect(() => {
-    localStorage.setItem("contacts", JSON.stringify(allContacts));
+    // localStorage.setItem("contacts", JSON.stringify(allContacts));
     setContacts(allContacts);
   }, [allContacts]);
 

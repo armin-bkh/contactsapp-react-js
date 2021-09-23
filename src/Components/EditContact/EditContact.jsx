@@ -12,15 +12,15 @@ const EditContact = ({ location, match, history, onEdit }) => {
       const { contact } = location.state;
       setContact(contact);
       return;
-    }
-    if (contactId) {
-      const savedContacts = JSON.parse(localStorage.getItem("contacts"));
-      const index = savedContacts.findIndex((ct) => ct.id === contactId);
+    } else history.push("/")
+    // if (contactId) {
+    //   const savedContacts = JSON.parse(localStorage.getItem("contacts"));
+    //   const index = savedContacts.findIndex((ct) => ct.id === contactId);
 
-      if (index === -1) history.push("/");
-      const selectedContact = savedContacts[index];
-      setContact(selectedContact);
-    }
+    //   if (index === -1) history.push("/");
+    //   const selectedContact = savedContacts[index];
+    //   setContact(selectedContact);
+    // }
   }, []);
 
   const changeHandler = (e) => {

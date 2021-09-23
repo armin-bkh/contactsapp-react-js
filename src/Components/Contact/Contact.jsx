@@ -14,14 +14,14 @@ const Contact = ({ location, match, history, onDelete }) => {
       const { contact } = location.state;
       setContact(contact);
       return;
-    }
-    if (contactId) {
-      const savedContacts = JSON.parse(localStorage.getItem("contacts"));
-      const index = savedContacts.findIndex((ct) => ct.id === contactId);
-      if (index === -1) history.push("/");
-      const selectedContact = savedContacts[index];
-      setContact(selectedContact);
-    }
+    } else history.push("/")
+    // if (contactId) {
+    //   const savedContacts = JSON.parse(localStorage.getItem("contacts"));
+    //   const index = savedContacts.findIndex((ct) => ct.id === contactId);
+    //   if (index === -1) history.push("/");
+    //   const selectedContact = savedContacts[index];
+    //   setContact(selectedContact);
+    // }
   }, []);
 
   return (
