@@ -31,13 +31,14 @@ const AddContact = ({ history, onAdd }) => {
   return (
     <>
       <header>
-        <h1 className={`font-header text-yellow-400 px-3 py-1`}>Add contact</h1>
+        <h1 className={`font-header font-bold text-yellow-400 px-3 py-1`}>Add contact</h1>
       </header>
       <main>
         <form className={`px-3 flex flex-col h-screen`} onSubmit={submitHandler}>
           <ContactInput
             type="text"
             name="name"
+            lbl="Name"
             value={contact.name}
             onChange={changeHandler}
             placeholder="Name..."
@@ -45,6 +46,7 @@ const AddContact = ({ history, onAdd }) => {
           <ContactInput
             type="email"
             name="email"
+            lbl="Email"
             value={contact.email}
             onChange={changeHandler}
             placeholder="Email..."
@@ -52,7 +54,7 @@ const AddContact = ({ history, onAdd }) => {
           {error && <h1 className={`font-email text-red-900 mt-3 mb-2`}>{error}</h1>}
           <button
             type="submit"
-            className={`mt-auto py-1 font-name rounded-md w-full outline-none border-none bg-yellow-400 text-gray-800`}
+            className={`mt-auto font-bold py-1 font-name rounded-md w-full outline-none border-none bg-yellow-400 text-gray-800`}
           >
             Add
           </button>

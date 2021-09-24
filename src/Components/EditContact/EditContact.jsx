@@ -44,7 +44,7 @@ const EditContact = ({ location, match, history, onEdit }) => {
   };
   return (
     <>
-      <header className={`px-3 py-1 text-yellow-400 font-header`}>
+      <header className={`px-3 py-1 font-bold text-yellow-400 font-header`}>
         Edit contact
       </header>
       <main>
@@ -56,6 +56,7 @@ const EditContact = ({ location, match, history, onEdit }) => {
             <ContactInput
               type="text"
               name="name"
+              lbl="Name"
               value={contact.name}
               placeholder="Name..."
               onChange={changeHandler}
@@ -63,6 +64,7 @@ const EditContact = ({ location, match, history, onEdit }) => {
             <ContactInput
               type="email"
               name="email"
+              lbl="Email"
               value={contact.email}
               placeholder="Email..."
               onChange={changeHandler}
@@ -72,7 +74,7 @@ const EditContact = ({ location, match, history, onEdit }) => {
             )}
             <button
               type="submit"
-              className={`w-full py-1 mt-auto bg-yellow-400 text-gray-800 rounded-md border-none outline-none`}
+              className={`w-full font-name font-bold py-1 mt-auto bg-yellow-400 text-gray-800 rounded-md border-none outline-none`}
             >
               Submit
             </button>

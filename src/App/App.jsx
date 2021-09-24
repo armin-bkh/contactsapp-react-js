@@ -6,40 +6,39 @@ import Contact from "../Components/Contact/Contact";
 import EditContact from "../Components/EditContact/EditContact";
 
 const App = ({ history }) => {
-  const [allContacts, setAllContacts] = useState([]);
+  const [allContacts, setAllContacts] = useState(null);
   const [contacts, setContacts] = useState(null);
 
   useEffect(() => {
-    const savedContacts = JSON.parse(localStorage.getItem("contacts"));
-    if (!savedContacts) {
-      history.push("/add-contact");
-      return;
-    }
-    setAllContacts(savedContacts);
-    setContacts(savedContacts);
+      const savedContacts = JSON.parse(localStorage.getItem("contacts"));
+      setAllContacts(savedContacts);
+      setContacts(savedContacts);
+      console.log(savedContacts);
+      if(!savedContacts) history.push('/add-contact')
   }, []);
 
   useEffect(() => {
-    localStorage.setItem("contacts", JSON.stringify(allContacts));
-    setContacts(allContacts);
-    if(allContacts){
-      if(!allContacts.length){
-        history.push("add-contact")
-      }
-    }
+    if(allContacts) {
+      localStorage.setItem("contacts", JSON.stringify(allContacts));
+      setContacts(allContacts);
+      if(!allContacts.length) history.push("/add-contact");
+    } else setContacts(null)
   }, [allContacts]);
 
   const addContactHandler = (contact) => {
+    if (allContacts) {
       setAllContacts([
         ...allContacts,
         { ...contact, id: new Date().getTime() },
       ]);
+    } else setAllContacts([{ ...contact, id: new Date().getTime() }]);
   };
 
   const deleteContactHandler = (id) => {
     const filteredContacts = allContacts.filter((ct) => ct.id !== id);
     setAllContacts(filteredContacts);
     if (!filteredContacts.length) {
+    setAllContacts([]);
       history.push("/add-contact");
       return;
     }
