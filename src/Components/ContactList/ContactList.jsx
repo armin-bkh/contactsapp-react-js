@@ -10,10 +10,8 @@ const ContactList = ({ contacts, onSearch }) => {
     const [error, setError] = useState(false);
 
     useEffect(()=>{
-            if(contacts){
                 if(!contacts.length) setError(true)
                 else setError(false)
-            }
     }, [contacts])
 
     const searchHandler = (e) => {
