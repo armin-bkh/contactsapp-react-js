@@ -10,24 +10,22 @@ const App = ({ history }) => {
   const [contacts, setContacts] = useState([]);
 
   useEffect(() => {
-      const savedContacts = JSON.parse(localStorage.getItem("contacts"));
-      setAllContacts(savedContacts || []);
-      if(!savedContacts) history.push('/add-contact')
+    const savedContacts = JSON.parse(localStorage.getItem("contacts")) || [];
+    console.log(savedContacts);
+    setAllContacts(savedContacts);
+    if (!savedContacts.length) history.push("/add-contact");
   }, []);
 
   useEffect(() => {
-    if(allContacts) {
+    if (allContacts) {
       localStorage.setItem("contacts", JSON.stringify(allContacts));
       setContacts(allContacts);
-      if(!allContacts.length) history.push("/add-contact");
-    } else setContacts(null)
+      if (!allContacts) history.push("/add-contact");
+    } else setContacts(null);
   }, [allContacts]);
 
   const addContactHandler = (contact) => {
-      setAllContacts([
-        ...allContacts,
-        { ...contact, id: new Date().getTime() },
-      ]);
+    setAllContacts([...allContacts, { ...contact, id: new Date().getTime() }]);
   };
 
   const deleteContactHandler = (id) => {
